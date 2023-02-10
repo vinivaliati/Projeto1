@@ -54,51 +54,6 @@ base.groupby("Tags")["Curtidas"].mean()
 # ### Para conseguir analisar separadamente as tags, podemos dividir linhas com 2 tags em 2 linhas
 # - Para isso primeiro vamos usar o split para separar em uma lista com as tags
 # - Depois vamos usar o explode para transformar as listas com 2 tags em 2 linhas diferentes
-
-# **O split separa um texto em uma lista baseado em algum separador**
-
-# In[61]:
-
-
-texto = "O Curso de Ciência de Dados da Hashtag é top!"
-
-
-# In[62]:
-
-
-# Se eu não passo nenhum argumento, ele vai separar por espaço
-texto.split()
-
-
-# In[63]:
-
-
-texto = "O-Curso-de-Ciência-de-Dados-da-Hashtag-é-top!"
-
-
-# In[64]:
-
-
-# Se eu não passo nenhum argumento, ele vai separar por espaço
-texto.split()
-
-
-# In[65]:
-
-
-# Se for outro delimitador, eu preciso informar
-texto.split("-")
-
-
-# In[66]:
-
-
-# Vamos usar isso para a nossa coluna "Tags"
-# Transformando a coluna Tags em uma lista de tags
-base.Tags = base.Tags.str.split("/")
-base.head()
-
-
 # **O explode vai separar uma coluna de um DataFrame em 1 linha para cada elemento da lista**
 
 # In[67]:
